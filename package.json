@@ -1,6 +1,6 @@
 
 {
-  "name": "react-native-picker-android",
+  "name": "react-native-pick-android",
   "version": "1.0.0",
   "description": "picker like ios",
   "main": "index.js",
