@@ -74,7 +74,7 @@ public class PickerView extends RelativeLayout {
     public int getIndex () {
         List<String> stringList = new ArrayList<String>(Arrays.asList(stringArr));
         Log.d("value  index ", stringList.indexOf("t") + "");
-        return stringList.indexOf("t");
+        return stringList.indexOf(userValue);
         //return  5;
     }
     public void onChange(String data) {
