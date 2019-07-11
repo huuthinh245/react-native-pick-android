@@ -30,8 +30,11 @@
 
 ## Usage
 ```javascript
-import RNPickAndroid from 'react-native-pick-android';
-
+import { Picker } from 'react-native-pick-android';
+    <Picker
+      data={data}
+      onValueChange={this._onValueChange}
+    />
 // TODO: What to do with the module?
 RNPickAndroid;
 ```
