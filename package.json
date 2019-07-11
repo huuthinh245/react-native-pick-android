@@ -1,0 +1,20 @@
+
+{
+  "name": "react-native-picker-android",
+  "version": "1.0.0",
+  "description": "picker like ios",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native",
+    "picker-android"
+  ],
+  "author": "huuthinh245",
+  "license": "",
+  "authorEmail": "huuthinh2209@gmail.com",
+  "peerDependencies": {
+    "react-native": "*"
+  }
+}
