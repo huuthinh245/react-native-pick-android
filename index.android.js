@@ -1,5 +1,5 @@
 import React from 'react';
-import { NativeModules, requireNativeComponent, StyleProp, ViewStyle, StyleSheet, Dimensions } from 'react-native';
+import { requireNativeComponent, StyleProp, ViewStyle, StyleSheet, Dimensions } from 'react-native';
 
 const NativePicker = requireNativeComponent(
   'RNPickerAndroid',
@@ -8,8 +8,8 @@ const NativePicker = requireNativeComponent(
 );
 interface Props {
   style: StyleProp<ViewStyle>,
-  onValueChange: void
-  initialData: String
+  onValueChange: void,
+  initialData: String,
   data: Array<String>
 }
 

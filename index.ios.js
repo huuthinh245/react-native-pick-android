@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { PickerIOS, StyleProp, ViewStyle, Dimensions } from 'react-native';
+import { PickerIOS, StyleProp, ViewStyle, Dimensions, StyleSheet } from 'react-native';
 
 interface Props {
   style: StyleProp<ViewStyle>,
