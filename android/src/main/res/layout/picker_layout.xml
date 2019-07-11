@@ -24,7 +24,6 @@
             app:npv_DividerColor="#cccccc"
             app:npv_ItemPaddingHorizontal="3dp"
             app:npv_RespondChangeOnDetached="false"
-            app:npv_ShowCount="5"
             app:npv_TextColorNormal="#aaaaaa"
             app:npv_TextColorSelected="#000000"
             app:npv_TextSizeNormal="18sp"

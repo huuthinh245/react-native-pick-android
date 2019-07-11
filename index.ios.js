@@ -1,11 +1,11 @@
 
 import React from 'react';
-import { PickerIOS } from 'react-native';
+import { PickerIOS, StyleProp, ViewStyle, Dimensions } from 'react-native';
 
 interface Props {
   style: StyleProp<ViewStyle>,
-  onValueChange: void
-  initialData: String
+  onValueChange: void,
+  initialData: String,
   data: Array<String>
 }
 
