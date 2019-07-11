@@ -43,7 +43,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'com.facebook.react:react-native:+'
+    implementation 'com.facebook.react:react-native:+'
     implementation 'cn.carbswang.android:NumberPickerView:1.1.1'
 }
   
