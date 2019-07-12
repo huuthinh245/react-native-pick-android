@@ -1,6 +1,6 @@
 
 # react-native-pick-android
-<img src="img/example.png" />
+<img src="img/example.gif" style="width: 250px; height: 500px"/>
 ## Getting started
 
 `$ npm install react-native-pick-android --save`
