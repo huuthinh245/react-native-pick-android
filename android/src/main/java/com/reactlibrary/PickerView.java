@@ -47,7 +47,6 @@ public class PickerView extends RelativeLayout {
     };
 
     public void setValueAtIndex() {
-        Log.d("value  index ", getIndex() + "");
         if(getIndex() != -1) {
             picker.setValue(getIndex());
         }
@@ -58,24 +57,36 @@ public class PickerView extends RelativeLayout {
         super.requestLayout();
         post(measureAndLayout);
     }
+
     public void initData(ReadableArray readableArray) {
-        stringArr = new String[readableArray.size()];;
-        for (int i = 0; i < readableArray.size(); i++) {
-            stringArr[i] = readableArray.getString(i);
+        ArrayList<Object>  data = readableArray.toArrayList();
+        stringArr = new String[data.size()];
+        for (int i = 0; i < data.size(); i++) {
+            Object obj = data.get(i);
+            stringArr[i] = convertData(obj);
         }
         picker.setDisplayedValues(stringArr);
         picker.setMinValue(0);
         picker.setMaxValue(stringArr.length - 1);
         setValueAtIndex();
     }
+
+    public String convertData(Object data) {
+        if (data instanceof Double) {
+            return String.valueOf(((Double) data).intValue());
+        } else if (data instanceof Boolean) {
+            return String.valueOf((Boolean) data);
+        } else {
+            return data.toString();
+        }
+    }
     public void setUserValue(String userValue) {
         this.userValue =  userValue;
     }
+
     public int getIndex () {
         List<String> stringList = new ArrayList<String>(Arrays.asList(stringArr));
-        Log.d("value  index ", stringList.indexOf("t") + "");
         return stringList.indexOf(userValue);
-        //return  5;
     }
     public void onChange(String data) {
         WritableMap event = Arguments.createMap();
