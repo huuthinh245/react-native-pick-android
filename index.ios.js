@@ -22,7 +22,7 @@ class RNPickerIos extends React.Component<Props> {
         onValueChange={this._onChange}
       >
         {this.props.data.map((c) => 
-        <Picker.Item key={c} label={c} value={c} />
+        <PickerIOS.Item key={c} label={c} value={c} />
         )}
       </PickerIOS>
     )

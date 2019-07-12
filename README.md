@@ -1,6 +1,6 @@
 
 # react-native-pick-android
-
+<img src="img/example.png" />
 ## Getting started
 
 `$ npm install react-native-pick-android --save`
@@ -31,11 +31,26 @@
 ## Usage
 ```javascript
 import { Picker } from 'react-native-pick-android';
-    <Picker
-      data={data}
-      onValueChange={this._onValueChange}
-    />
-// TODO: What to do with the module?
-RNPickAndroid;
+
+class Example extends React.Component {
+  state = {
+    data: 'b'
+  }
+  _onValueChange = (data) => {
+    console.log(data);
+    this.setState({ data })
+  }
+  render() {
+    const data  = ["a", "b", "c"];
+    return(
+      <Picker
+        initialData={this.state.data}
+        data={data}
+        onValueChange={this._onValueChange}
+      />
+    )
+  }
+}
+
 ```
   
