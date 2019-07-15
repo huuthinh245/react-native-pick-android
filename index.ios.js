@@ -5,7 +5,7 @@ import { PickerIOS, StyleProp, ViewStyle, Dimensions, StyleSheet } from 'react-n
 interface Props {
   style: StyleProp<ViewStyle>,
   onValueChange: void,
-  initialData: String,
+  initData: String,
   data: Array<String>
 }
 
@@ -18,7 +18,7 @@ class RNPickerIos extends React.Component<Props> {
     return (
       <PickerIOS
         style={[styles.picker, this.props.style]}
-        selectedValue={this.props.initialData}
+        selectedValue={this.props.initData}
         onValueChange={this._onChange}
       >
         {this.props.data.map((c) => 

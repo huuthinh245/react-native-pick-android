@@ -24,9 +24,9 @@ public class PickerManager extends SimpleViewManager<PickerView> {
         view.initData(data);
     }
 
-    @ReactProp(name = "initialData")
+    @ReactProp(name = "initData")
     public void setData(PickerView view, String data) {
-        view.setUserValue(data);
+        view.getIndex(data);
     }
 
 

@@ -20,7 +20,6 @@ import cn.carbswang.android.numberpickerview.library.NumberPickerView;
 public class PickerView extends RelativeLayout {
     private WheelOrderUpdater wheelOrderUpdater;
     private NumberPickerView picker;
-    private String userValue;
     private String[] stringArr;
     public PickerView() {
         super(PickerManager.context);
@@ -46,12 +45,6 @@ public class PickerView extends RelativeLayout {
         }
     };
 
-    public void setValueAtIndex() {
-        if(getIndex() != -1) {
-            picker.setValue(getIndex());
-        }
-    }
-
     @Override
     public void requestLayout() {
         super.requestLayout();
@@ -68,7 +61,6 @@ public class PickerView extends RelativeLayout {
         picker.setDisplayedValues(stringArr);
         picker.setMinValue(0);
         picker.setMaxValue(stringArr.length - 1);
-        setValueAtIndex();
     }
 
     public String convertData(Object data) {
@@ -80,16 +72,13 @@ public class PickerView extends RelativeLayout {
             return data.toString();
         }
     }
-    public void setUserValue(String userValue) {
-        this.userValue =  userValue;
-    }
 
-    public int getIndex () {
+    public void getIndex (String data) {
         List<String> stringList = new ArrayList<String>(Arrays.asList(stringArr));
-        if(userValue != null)  {
-            return stringList.indexOf(userValue);
+        if(data != null)  {
+           int index = stringList.indexOf(data);
+            picker.setValue(index);
         }
-        return 0;
     }
     public void onChange(String data) {
         WritableMap event = Arguments.createMap();

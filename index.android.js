@@ -9,7 +9,7 @@ const NativePicker = requireNativeComponent(
 interface Props {
   style: StyleProp<ViewStyle>,
   onValueChange: void,
-  initialData: String,
+  initData: String,
   data: Array<String>
 }
 
@@ -22,7 +22,7 @@ class RNPickerAndroid extends  React.Component<Props> {
     return(
       <NativePicker
         style={[styles.picker, this.props.style]}
-        initialData={this.props.initialData.toString()}
+        initData={this.props.initData.toString()}
         data={this.props.data}
         onChange={this._onChange}
       />
