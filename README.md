@@ -14,7 +14,7 @@
 
 #### Android
 
-1. Open up `android/app/src/main/java/[...]/MainActivity.java`
+1. Open up `android/app/src/main/java/[...]/MainApplication.java`
   - Add `import com.reactlibrary.RNPickAndroidPackage;` to the imports at the top of the file
   - Add `new RNPickAndroidPackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
@@ -44,7 +44,7 @@ class Example extends React.Component {
     const data  = ["a", "b", "c"];
     return(
       <Picker
-        initialData={this.state.data}
+        initData={this.state.data}
         data={data}
         onValueChange={this._onValueChange}
       />
