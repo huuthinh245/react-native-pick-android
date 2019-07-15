@@ -22,7 +22,7 @@ class RNPickerAndroid extends  React.Component<Props> {
     return(
       <NativePicker
         style={[styles.picker, this.props.style]}
-        initialData={this.props.initialData}
+        initialData={this.props.initialData.toString()}
         data={this.props.data}
         onChange={this._onChange}
       />
