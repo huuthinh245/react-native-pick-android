@@ -86,7 +86,10 @@ public class PickerView extends RelativeLayout {
 
     public int getIndex () {
         List<String> stringList = new ArrayList<String>(Arrays.asList(stringArr));
-        return stringList.indexOf(userValue);
+        if(userValue != null)  {
+            return stringList.indexOf(convertData(userValue));
+        }
+        return 0;
     }
     public void onChange(String data) {
         WritableMap event = Arguments.createMap();
