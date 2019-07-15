@@ -21,7 +21,7 @@
             android:id="@+id/picker"
             android:layout_width="match_parent"
             android:layout_height="160dp"
-            app:npv_ShownCount="5"
+            app:npv_ShowCount="5"
             app:npv_DividerColor="#cccccc"
             app:npv_ItemPaddingHorizontal="3dp"
             app:npv_RespondChangeOnDetached="false"
