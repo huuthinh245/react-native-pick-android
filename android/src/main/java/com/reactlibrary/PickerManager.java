@@ -1,7 +1,5 @@
 package com.reactlibrary;
 
-import androidx.annotation.Nullable;
-
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.common.MapBuilder;
 import com.facebook.react.uimanager.SimpleViewManager;
@@ -22,7 +20,7 @@ public class PickerManager extends SimpleViewManager<PickerView> {
     }
 
     @ReactProp(name = "data")
-    public void init(PickerView view, @Nullable ReadableArray data) {
+    public void init(PickerView view, ReadableArray data) {
         view.initData(data);
     }
 
@@ -34,7 +32,7 @@ public class PickerManager extends SimpleViewManager<PickerView> {
 
     @Nonnull
     @Override
-    protected PickerView createViewInstance(@Nonnull ThemedReactContext reactContext) {
+    protected PickerView createViewInstance( ThemedReactContext reactContext) {
         PickerManager.context = reactContext;
         return  new PickerView();
     }
