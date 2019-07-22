@@ -3,6 +3,7 @@ package com.reactlibrary;
 import android.graphics.Color;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 
@@ -20,11 +21,12 @@ import cn.carbswang.android.numberpickerview.library.NumberPickerView;
 public class PickerView extends RelativeLayout {
     private WheelOrderUpdater wheelOrderUpdater;
     private NumberPickerView picker;
+    public  String userValue;
     private String[] stringArr;
     public PickerView() {
         super(PickerManager.context);
         View rootView = inflate(getContext(), R.layout.picker_layout,this);
-        RelativeLayout wheelsWrapper  = (RelativeLayout) rootView.findViewById(R.id.wheelsWrapper);
+        LinearLayout wheelsWrapper  = (LinearLayout) rootView.findViewById(R.id.wheelsWrapper);
         picker = (NumberPickerView) wheelsWrapper.findViewById(R.id.picker);
         wheelsWrapper.setWillNotDraw(false);
         picker.setDividerColor(Color.BLACK);
@@ -61,6 +63,9 @@ public class PickerView extends RelativeLayout {
         picker.setDisplayedValues(stringArr);
         picker.setMinValue(0);
         picker.setMaxValue(stringArr.length - 1);
+        picker.setWrapSelectorWheel(true);
+        picker.refreshByNewDisplayedValues(stringArr);
+        getIndex();
     }
 
     public String convertData(Object data) {
@@ -73,13 +78,15 @@ public class PickerView extends RelativeLayout {
         }
     }
 
-    public void getIndex (String data) {
+    public void getIndex () {
         List<String> stringList = new ArrayList<String>(Arrays.asList(stringArr));
+        String data = this.userValue;
         if(data != null)  {
-           int index = stringList.indexOf(data);
+            int index = stringList.indexOf(data);
             picker.setValue(index);
         }
     }
+
     public void onChange(String data) {
         WritableMap event = Arguments.createMap();
         event.putString("data", data);

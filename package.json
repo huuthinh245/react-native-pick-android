@@ -1,6 +1,6 @@
 {
   "name": "react-native-pick-android",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Use default IOS Picker and custom on android",
   "main": "index.js",
   "scripts": {
@@ -19,6 +19,6 @@
   "license": "",
   "authorEmail": "huuthinh2209@gmail.com",
   "peerDependencies": {
-    "react-native": "*"
+    "react-native": ">=0.59.0"
   }
 }
