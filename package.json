@@ -3,6 +3,7 @@
   "version": "1.0.8",
   "description": "Use default IOS Picker and custom on android",
   "main": "index.js",
+  "types": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
