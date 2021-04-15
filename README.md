@@ -30,26 +30,27 @@
 
 ## Usage
 ```javascript
-import { Picker } from 'react-native-pick-android';
+import RNPickerAndroid from 'react-native-pick-android';
+
 
 class Example extends React.Component {
-  state = {
-    data: 'b'
-  }
-  _onValueChange = (data) => {
-    console.log(data);
-    this.setState({ data })
-  }
-  render() {
-    const data  = ["a", "b", "c"];
-    return(
-      <Picker
-        initData={this.state.data}
-        data={data}
-        onValueChange={this._onValueChange}
-      />
-    )
-  }
+    state = {
+      data: 'b'
+    }
+    _onValueChange = (data: string) => {
+      console.log(data);
+      this.setState({ data })
+    }
+    render() {
+      const data  = ["a", "b", "c"];
+      return(
+        <RNPickerAndroid
+          initData={this.state.data}
+          data={data}
+          onValueChange={this._onValueChange}
+        />
+      )
+    }
 }
 
 ```
